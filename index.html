@@ -3,87 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carta Sorpresa 💖</title>
+  <title>Carta Sorpresa</title>
 
   <style>
     body {
       margin: 0;
       font-family: 'Georgia', serif;
-      background: linear-gradient(180deg, #ffd6e8, #ffeef6);
+      background: linear-gradient(180deg, #fde6ee, #fff);
       overflow: hidden;
     }
+
+  
     .screen {
       min-height: 100vh;
       display: none;
       justify-content: center;
-      align-items: center;
-      padding: 20px;
+      align-items: flex-start;
+      padding-top: 22vh; 
+      text-align: center;
     }
 
     .screen.active {
       display: flex;
     }
 
+  
     .welcome {
-      text-align: center;
-      animation: aparecer 1.5s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: aparecer 1.2s ease;
     }
 
     .welcome h1 {
+      font-size: 32px;
       color: #d6336c;
-      font-size: 26px;
       margin-bottom: 10px;
     }
 
     .welcome p {
+      font-size: 18px;
       color: #a61e4d;
-      font-size: 16px;
-      margin-bottom: 25px;
+      margin-bottom: 28px;
+    }
+
+    .heart {
+      font-size: 42px;
+      margin-bottom: 10px;
+      animation: latido 1.4s infinite;
     }
 
     .btn {
       background: linear-gradient(135deg, #ff4d88, #ff85b3);
       border: none;
-      padding: 14px 28px;
-      border-radius: 30px;
+      padding: 18px 38px;
+      border-radius: 40px;
       color: white;
-      font-size: 16px;
+      font-size: 18px;
       cursor: pointer;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       animation: latido 1.4s infinite;
     }
 
-    .btn:hover {
-      transform: scale(1.05);
-    }
-
+ 
     .card {
-      width: 100%;
+      width: 92%;
       max-width: 420px;
       background: white;
       border-radius: 25px;
       padding: 25px;
       text-align: center;
       box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-      animation: aparecer 1.5s ease;
-      position: relative;
-      z-index: 2;
+      animation: aparecer 1.2s ease;
+      margin: auto;
     }
 
     h2 {
       color: #d6336c;
     }
 
-    .heart {
-      font-size: 40px;
-      animation: latido 1.4s infinite;
-    }
-
     .letter {
       background: #fff0f6;
       border-radius: 18px;
       padding: 20px;
-      margin-top: 20px;
+      margin-top: 18px;
       color: #5c2a3d;
       line-height: 1.7;
       font-size: 15px;
@@ -101,8 +104,9 @@
       overflow: hidden;
     }
 
+  
     @keyframes aparecer {
-      from { opacity: 0; transform: scale(0.9); }
+      from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
     }
 
@@ -111,6 +115,7 @@
       50% { transform: scale(1.2); }
     }
 
+ 
     .corazon {
       position: absolute;
       bottom: -20px;
@@ -135,12 +140,13 @@
 
 <body>
 
+
 <div class="screen active" id="pantalla1">
   <div class="welcome">
     <div class="heart">💖</div>
     <h1>Para Sofía</h1>
     <p>Algo especial te está esperando…</p>
-    <button class="btn" onclick="mostrarCarta()">Clic aquí 💕</button>
+    <button class="btn" onclick="mostrarCarta()">Haz clic aquí 💕</button>
   </div>
 </div>
 
@@ -171,7 +177,7 @@
     </div>
 
     <div class="firma">
-      Con todo mi corazón Eduardo💕
+      Con todo mi corazón Eduardo 💕
     </div>
 
     <div class="music">
@@ -207,4 +213,7 @@
 
 </body>
 </html>
-    
+
+
+ 
+
