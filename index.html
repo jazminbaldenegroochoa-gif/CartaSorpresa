@@ -2,120 +2,122 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sorpresa Romántica</title>
+  <title>Carta Sorpresa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
       background: #ffe6f0;
       font-family: 'Great Vibes', cursive;
+      text-align: center;
+      overflow: hidden; 
     }
     .pantalla {
       display: none;
       height: 100vh;
-      width: 100vw;
-      box-sizing: border-box;
       padding: 5vh 5vw;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
     }
-    .activa {
-      display: flex; /* 👈 ahora sí funciona el click en iPhone */
-      animation: fadeIn 1s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .pantalla.activa {
+      display: block;
+      animation: fadeIn 2s ease-in;
     }
     h1 {
-      color: #d6336c;
-      font-size: 8vw;
-      margin: 2vh 0 1vh 0;
+      font-size: 3em;
+      margin-top: 20vh;
     }
-    h2 {
-      color: #c9184a;
-      font-size: 6vw;
-      margin-bottom: 4vh;
+    p {
+      font-size: 1.5em;
     }
-    .boton {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 2vh 4vw;
-      background-color: #ff4d6d;
-      color: white;
-      border-radius: 30px;
-      font-size: 5vw;
-      cursor: pointer;
+  
+    .titulo1 { color: #ff3366; }  
+    .subtitulo1 { color: #ff6699; }
+    .boton1 {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #ffcccc; 
+      color: #b30059;
       border: none;
+      border-radius: 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
     }
-    .corazon-contorno {
-      font-size: 6vw;
-      color: transparent;
-      -webkit-text-stroke: 2px white;
+    .boton1:hover {
+      transform: scale(1.1);
+      background: #ffffff; 
     }
+    .titulo2 { color: #b30059; } 
+    .subtitulo2 { color: #ffcccc; }
     iframe {
+      margin-top: 30px;
       border-radius: 12px;
-      width: 90%;
-      height: 152px; /* tamaño fijo para que se vea en iPhone */
-      margin-bottom: 3vh;
     }
-    .carta {
-      width: 90%;
-      background: #fff;
-      border-radius: 12px;
-      padding: 4vw;
-      font-family: 'Allura', cursive;
-      font-size: 5vw;
-      color: #333;
-      line-height: 1.6;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: left;
-      overflow-y: auto;
-      max-height: 40vh;
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  
+    .corazon {
+      position: fixed;
+      font-size: 2em;
+      animation: flotar 6s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes flotar {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% { opacity: 1; }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
   <!-- Pantalla 1 -->
   <div id="pantalla1" class="pantalla activa">
-    <h1>Para Sofía</h1>
-    <h2>Una sorpresa te espera</h2>
-    <button class="boton" onclick="mostrarPantalla2()">
-      Haz clic aquí <span class="corazon-contorno">❤</span>
-    </button>
+    <h1 class="titulo1">Para Sofía</h1>
+    <p class="subtitulo1">Una sorpresa te espera</p>
+    <button class="boton1" onclick="mostrarPantalla2()">Haz clic aquí</button>
   </div>
 
   <!-- Pantalla 2 -->
   <div id="pantalla2" class="pantalla">
-    <!-- Reproductor Spotify con Perfect -->
-    <iframe src="https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v" 
-      frameborder="0" allow="encrypted-media">
+    <h1 class="titulo2">Con todo mi cariño 💖</h1>
+    <p class="subtitulo2">Esta canción es para ti...</p>
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v?utm_source=generator" 
+      width="300" height="380" frameborder="0" allowfullscreen="" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
     </iframe>
-
-    <h1>Mi amor eterno</h1>
-    <h2>Para: Sofía ❤️</h2>
-
-    <!-- Carta -->
-    <div class="carta">
-      Querida Sofía,<br><br>
-      Hoy quiero recordarte cuánto significas para mí.  
-      Cada sonrisa tuya ilumina mis días y cada palabra tuya se queda en mi corazón.  
-      Gracias por ser mi inspiración, mi paz y mi alegría. ❤️  
-      <br><br>
-      Con todo mi amor,<br>
-      Eduardo
-    </div>
   </div>
 
   <script>
     function mostrarPantalla2() {
-      document.getElementById("pantalla1").classList.remove("activa");
-      document.getElementById("pantalla2").classList.add("activa");
+      document.getElementById('pantalla1').classList.remove('activa');
+      document.getElementById('pantalla2').classList.add('activa');
     }
+
+  
+    function crearCorazon() {
+      const corazon = document.createElement("div");
+      corazon.classList.add("corazon");
+     
+      const colores = ["#ff3366","💖","#ff6699","💘","#ffffff"];
+      corazon.innerHTML = colores[Math.floor(Math.random()*colores.length)];
+      corazon.style.left = Math.random() * 100 + "vw";
+      corazon.style.animationDuration = (4 + Math.random() * 3) + "s";
+      document.body.appendChild(corazon);
+
+      setTimeout(() => { corazon.remove(); }, 7000);
+    }
+    setInterval(crearCorazon, 800);
   </script>
 </body>
+</html>
+
 </html>
