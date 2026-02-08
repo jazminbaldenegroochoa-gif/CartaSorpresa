@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorpresa Romántica</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffe6f0;
+      font-family: 'Great Vibes', cursive;
+    }
+    .pantalla {
+      display: none;
+      height: 100vh;
+      width: 100vw;
+      box-sizing: border-box;
+      padding: 5vh 5vw;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .activa {
+      display: flex; /* 👈 ahora sí funciona el click en iPhone */
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    h1 {
+      color: #d6336c;
+      font-size: 8vw;
+      margin: 2vh 0 1vh 0;
+    }
+    h2 {
+      color: #c9184a;
+      font-size: 6vw;
+      margin-bottom: 4vh;
+    }
+    .boton {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 2vh 4vw;
+      background-color: #ff4d6d;
+      color: white;
+      border-radius: 30px;
+      font-size: 5vw;
+      cursor: pointer;
+      border: none;
+    }
+    .corazon-contorno {
+      font-size: 6vw;
+      color: transparent;
+      -webkit-text-stroke: 2px white;
+    }
+    iframe {
+      border-radius: 12px;
+      width: 90%;
+      height: 152px; /* tamaño fijo para que se vea en iPhone */
+      margin-bottom: 3vh;
+    }
+    .carta {
+      width: 90%;
+      background: #fff;
+      border-radius: 12px;
+      padding: 4vw;
+      font-family: 'Allura', cursive;
+      font-size: 5vw;
+      color: #333;
+      line-height: 1.6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: left;
+      overflow-y: auto;
+      max-height: 40vh;
+    }
+  </style>
+</head>
+<body>
+  <!-- Pantalla 1 -->
+  <div id="pantalla1" class="pantalla activa">
+    <h1>Para Sofía</h1>
+    <h2>Una sorpresa te espera</h2>
+    <button class="boton" onclick="mostrarPantalla2()">
+      Haz clic aquí <span class="corazon-contorno">❤</span>
+    </button>
+  </div>
+
+  <!-- Pantalla 2 -->
+  <div id="pantalla2" class="pantalla">
+    <!-- Reproductor Spotify con Perfect -->
+    <iframe src="https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v" 
+      frameborder="0" allow="encrypted-media">
+    </iframe>
+
+    <h1>Mi amor eterno</h1>
+    <h2>Para: Sofía ❤️</h2>
+
+    <!-- Carta -->
+    <div class="carta">
+      Querida Sofía,<br><br>
+      Hoy quiero recordarte cuánto significas para mí.  
+      Cada sonrisa tuya ilumina mis días y cada palabra tuya se queda en mi corazón.  
+      Gracias por ser mi inspiración, mi paz y mi alegría. ❤️  
+      <br><br>
+      Con todo mi amor,<br>
+      Eduardo
+    </div>
+  </div>
+
+  <script>
+    function mostrarPantalla2() {
+      document.getElementById("pantalla1").classList.remove("activa");
+      document.getElementById("pantalla2").classList.add("activa");
+    }
+  </script>
+</body>
+</html>
