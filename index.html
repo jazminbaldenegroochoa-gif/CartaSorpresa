@@ -13,18 +13,29 @@
       overflow: hidden;
     }
 
-  
+    /* BASE DE PANTALLAS */
     .screen {
       min-height: 100vh;
       display: none;
       justify-content: center;
-      align-items: flex-start;
-      padding-top: 22vh; 
       text-align: center;
     }
 
     .screen.active {
       display: flex;
+    }
+
+   
+    #pantalla1 {
+      align-items: flex-start;
+      padding-top: 22vh;
+    }
+
+   
+    #pantalla2 {
+      align-items: flex-start;
+      padding: 20px 0;
+      overflow-y: auto; 
     }
 
   
@@ -65,17 +76,16 @@
       animation: latido 1.4s infinite;
     }
 
- 
+    /* CARTA */
     .card {
       width: 92%;
       max-width: 420px;
       background: white;
       border-radius: 25px;
       padding: 25px;
-      text-align: center;
+      margin: 0 auto 30px;
       box-shadow: 0 15px 40px rgba(0,0,0,0.2);
       animation: aparecer 1.2s ease;
-      margin: auto;
     }
 
     h2 {
@@ -104,7 +114,6 @@
       overflow: hidden;
     }
 
-  
     @keyframes aparecer {
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
@@ -115,7 +124,6 @@
       50% { transform: scale(1.2); }
     }
 
- 
     .corazon {
       position: absolute;
       bottom: -20px;
@@ -126,20 +134,13 @@
     }
 
     @keyframes flotar {
-      from {
-        transform: translateY(0);
-        opacity: 1;
-      }
-      to {
-        transform: translateY(-120vh);
-        opacity: 0;
-      }
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-120vh); opacity: 0; }
     }
   </style>
 </head>
 
 <body>
-
 
 <div class="screen active" id="pantalla1">
   <div class="welcome">
@@ -177,7 +178,7 @@
     </div>
 
     <div class="firma">
-      Con todo mi corazón Eduardo 💕
+      Con todo mi corazón Eduardo💕
     </div>
 
     <div class="music">
@@ -204,7 +205,6 @@
     c.style.left = Math.random() * 100 + "vw";
     c.style.animationDuration = (4 + Math.random() * 4) + "s";
     document.body.appendChild(c);
-
     setTimeout(() => c.remove(), 8000);
   }
 
@@ -213,7 +213,10 @@
 
 </body>
 </html>
+   
 
 
- 
+
+
+
 
