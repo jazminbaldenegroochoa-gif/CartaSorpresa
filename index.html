@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carta Sorpresa</title>
+  <title>San Valentín</title>
 
   <style>
     body {
@@ -18,110 +18,43 @@
       min-height: 100vh;
       display: none;
       justify-content: center;
+      align-items: center;
       text-align: center;
+      flex-direction: column;
     }
 
     .screen.active {
       display: flex;
     }
 
-   
-    #pantalla1 {
-      align-items: flex-start;
-      padding-top: 22vh;
-    }
-
-   
-    #pantalla2 {
-      align-items: flex-start;
-      padding: 20px 0;
-      overflow-y: auto; 
-    }
-
-  
-    .welcome {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: aparecer 1.2s ease;
-    }
-
-    .welcome h1 {
-      font-size: 32px;
-      color: #d6336c;
-      margin-bottom: 10px;
-    }
-
-    .welcome p {
-      font-size: 18px;
-      color: #a61e4d;
-      margin-bottom: 28px;
-    }
-
-    .heart {
-      font-size: 42px;
-      margin-bottom: 10px;
-      animation: latido 1.4s infinite;
-    }
-
+    /* BOTÓN */
     .btn {
       background: linear-gradient(135deg, #ff4d88, #ff85b3);
       border: none;
-      padding: 18px 38px;
+      padding: 20px 40px;
       border-radius: 40px;
       color: white;
-      font-size: 18px;
+      font-size: 20px;
       cursor: pointer;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       animation: latido 1.4s infinite;
     }
 
-    /* CARTA */
-    .card {
-      width: 92%;
-      max-width: 420px;
-      background: white;
-      border-radius: 25px;
-      padding: 25px;
-      margin: 0 auto 30px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-      animation: aparecer 1.2s ease;
-    }
-
-    h2 {
+    h1 {
       color: #d6336c;
+      font-size: 40px;
+      margin-bottom: 20px;
     }
 
-    .letter {
-      background: #fff0f6;
-      border-radius: 18px;
-      padding: 20px;
-      margin-top: 18px;
-      color: #5c2a3d;
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
-    .firma {
-      margin-top: 18px;
-      font-style: italic;
-      color: #a61e4d;
-    }
-
-    .music {
-      margin-top: 20px;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    @keyframes aparecer {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+    img {
+      width: 260px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
 
     @keyframes latido {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
+      50% { transform: scale(1.15); }
     }
 
     .corazon {
@@ -142,58 +75,19 @@
 
 <body>
 
+<!-- Pantalla 1 -->
 <div class="screen active" id="pantalla1">
-  <div class="welcome">
-    <div class="heart">💖</div>
-    <h1>Para Sofía</h1>
-    <p>Algo especial te está esperando…</p>
-    <button class="btn" onclick="mostrarCarta()">Haz clic aquí 💕</button>
-  </div>
+  <button class="btn" onclick="mostrarPantalla()">Da click aquí 💖</button>
 </div>
 
-
+<!-- Pantalla 2 -->
 <div class="screen" id="pantalla2">
-  <div class="card">
-    <div class="heart">💗</div>
-    <h2>Mi amor eterno</h2>
-
-    <div class="letter">
-      Desde que llegaste,  
-      mi mundo se volvió más bonito.  
-      No fue algo planeado,  
-      simplemente pasó…  
-      y ahora no imagino mis días sin pensarte.
-
-      <br><br>
-
-      Esta carta es un pequeño reflejo  
-      de todo lo que siento,  
-      de cada sonrisa que provocas  
-      y de lo especial que eres para mí.
-
-      <br><br>
-
-      Ojalá cada palabra te abrace  
-      como yo lo haría.
-    </div>
-
-    <div class="firma">
-      Con todo mi corazón Eduardo💕
-    </div>
-
-    <div class="music">
-      <iframe style="border-radius:12px"
-        src="https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v"
-        width="100%" height="80"
-        frameBorder="0"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-      </iframe>
-    </div>
-  </div>
+  <h1>Feliz San Valentín 💘</h1>
+  <img src="https://ar.pinterest.com/pin/418131146669821116/" alt="Mono sonriendo">
 </div>
 
 <script>
-  function mostrarCarta() {
+  function mostrarPantalla() {
     document.getElementById("pantalla1").classList.remove("active");
     document.getElementById("pantalla2").classList.add("active");
   }
@@ -213,7 +107,8 @@
 
 </body>
 </html>
-   
+
+
 
 
 
